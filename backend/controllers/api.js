@@ -2,14 +2,13 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
-
 class API {
     // Method to register a new user
     static async register(req, res) {
         const { username, password } = req.body;
         try {
-            const user = new User({ username, password });
+            const hashedPassword = await bcrypt.hash(password, 10);
+            const user = new User({ username, password: hashedPassword });
             await user.save();
             res.status(201).json({ message: 'User registered successfully' });
         } catch (err) {
@@ -36,7 +35,6 @@ class API {
 
     // Method to logout a user
     static async logout(req, res) {
-        // Since we're using JWT, logging out can be handled on the client-side by removing the token
         res.status(200).json({ message: 'User logged out successfully' });
     }
 }
