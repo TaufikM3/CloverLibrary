@@ -4,6 +4,7 @@ import Kategori from '../views/kategoriView.vue'
 import Update from '../views/updateView.vue'
 import Register from '../views/Pendaftaran/registerView.vue'
 import Login from '../views/Pendaftaran/loginView.vue'
+import UlasanView from '@/views/ulasanView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/updates',
       name: 'Update',
       component: Update,
+    },
+    {
+      path: '/ulasan',
+      name: 'Ulasan',
+      component: UlasanView,
     },
     {
       path: '/register',

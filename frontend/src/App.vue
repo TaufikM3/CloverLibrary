@@ -67,6 +67,7 @@
     { name: 'Home', path: '/' },
     { name: 'Kategori', path: '/kategori' },
     { name: 'Updates', path: '/updates' }, // Menukar posisi dengan 'Login'
+    { name: 'Ulasan', path: '/ulasan' }, 
     { name: 'Login', path: '/login' }, // Menambahkan tombol Login
   ]);
 
